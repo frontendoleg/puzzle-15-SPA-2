@@ -1,0 +1,83 @@
+html
+{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+body
+{
+	margin:0;
+	padding:20px 0 0 0;
+	width:100%;
+	background:#000;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    background-color: #E0EEE0;
+}
+.block
+{
+    width: 600px;
+    border: 1px solid #000;
+    padding: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+	position:relative;
+	left:50%;
+	margin-left:-300px;
+}
+#menu
+{
+    width: 300px;
+	position:relative;
+	left:50%;
+	margin-left:-150px;
+    margin-bottom: 20px;
+}
+    #menu ul
+    {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: 2em;
+    }
+    #menu ul li
+    {
+        float: left;
+        margin-right: 20px;
+    }
+    /*   ----- style puzzle -----*/
+
+.bones{
+    cursor: pointer;
+    background-color: green;
+    border:10px solid #999;
+    position: absolute;
+}
+.boneNumber{
+    font-family: arial;
+    font-weight: bold;
+    font-size: 5em;
+    color: white;
+    line-height: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid red;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+.wrapper{
+    /*display: inline-block;*/
+    background-color: #999;
+    /*float: left;*/
+    padding: 10px;/*было 15*/
+    border-radius: 10px;/*было 15*/
+    border-color: red;
+    margin: 0 auto;
+    height: 300px; /* временно */
+    width: 300px; /* временно */
+}

@@ -1,0 +1,51 @@
+.bones{
+	cursor: pointer;
+	background-color: green;
+	border:10px solid #999;
+	position: absolute;
+}
+/*.bone{
+	border: 2.5px solid gray;
+	width: 150px;
+	height: 150px;
+	background-color: green;
+	border-radius: 10px;
+	margin: 5px;
+	float: left;
+	cursor: pointer;
+}
+.bone:hover{
+	background-color: gray;
+}*/
+.boneNumber{
+	font-family: arial;
+	font-weight: bold;
+	font-size: 5em;
+	color: white;
+	line-height: 100px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px solid red;
+	padding: 5px;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+/*.clear{
+	clear: both;
+}*/
+.wrapper{
+	background-color: #999;
+	float: left;
+	padding: 15px;
+	border-radius: 15px;
+	margin: 0 auto;
+}
+/*#mybutton{
+	display: block;
+	margin: 20px auto;
+
+
+}*/
