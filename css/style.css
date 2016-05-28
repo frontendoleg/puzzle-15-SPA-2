@@ -73,13 +73,13 @@ body
 }
 .wrapper{
     /*display: inline-block;*/
-    background-color: #999;
+    background-color: red !important;
     /*float: left;*/
     /*padding: 10px;/*было 15*/*/
     border-radius: 10px;/*было 15*/
-    border-color: red;
+    border-color: red !important;
     /*margin: 0 auto;*/
-    /*height: 300px; /* временно */*/
+    /*height: 300px; /* временно */
     /*width: 300px;  временно */
-    border: 100px solid blue;
+    border: 10px solid blue !important;
 }

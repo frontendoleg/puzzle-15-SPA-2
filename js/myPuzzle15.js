@@ -211,6 +211,7 @@ function makeGameField(fieldSize) {
 		'height': fieldSize+"vmin",
 		'background-color': '#999',
 	 	'margin': '0 auto',
-	 	'position': 'relative',}).attr('id','fff');		// стили поля
+	 	'position': 'relative',
+	 	'border-width': '10px'}).attr('id','fff');		// стили поля
 	//.appendTo('body');
 }
