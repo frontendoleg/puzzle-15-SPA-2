@@ -140,7 +140,8 @@ function game15(){
 													'height': boneSize+"vmin",})		// создаем костяшки
 												.addClass("bones")
 												.css({
-													'background-color':'#999',  // это цвет пустой костяшки
+													'background-color':'#999',
+													'-webkit-clip-path':'inset(2px 2px 2px 2px round 2px)', // это цвет пустой костяшки
 
 
 													'left': xj*boneSize+"vmin",
