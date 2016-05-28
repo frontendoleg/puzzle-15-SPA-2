@@ -212,5 +212,4 @@ function makeGameField(fieldSize) {
 		'background-color': '#999',
 	 	'margin': '0 auto',
 	 	'position': 'relative',}).attr('id','fff');		// стили поля
-	//.appendTo('body');
 }
