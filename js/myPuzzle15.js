@@ -56,12 +56,12 @@ function event(x,y){ // функция действия при кликах мы
 function eventKey(x,y){ // функция действия при нажатии клавиш
 	// нужно переместить подходящую костяшку, если это возможно
 	var xNull = getNull().x;
-	console.log ('xNull = ',xNull);
+	// console.log ('xNull = ',xNull);
 	var yNull = getNull().y;
-	console.log ('yNull = ',yNull);
+	// console.log ('yNull = ',yNull);
 	var xBone = x+xNull, yBone = y+yNull; // координаты клетки кандидата
-	console.log('xBone = ', xBone);
-	console.log('yBone = ', yBone);
+	// console.log('xBone = ', xBone);
+	// console.log('yBone = ', yBone);
 	if((xBone >= 0 && xBone < 4) && (yBone >= 0 && yBone < 4)){
 		// костяшку сдвинуть можно
 		//alert('xBone = '+xBone + ' yBone = '+yBone);
@@ -103,11 +103,12 @@ function game15(){
 	var cellView = null;
 	var numView = null;
 
-	var cliks = 0;
+	var clicks = 0;
+	var placeShowResult = document.getElementById('placeShowResult');
 
 	// метод, рисующий наши пятнашки на экране
 	this.draw = function(boneSize) {
-		console.log('arr',arr);
+		// console.log('arr',arr);
 		for (var yi = 0; yi < 4; yi++) {
 			for (var xj = 0; xj < 4; xj++) {
 				if (arr[yi][xj] > 0) {
@@ -158,12 +159,15 @@ function game15(){
 	this.move = function(x,y) {
 		var nullX = getNull().x;
 		var nullY = getNull().y;
-		console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);
+		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
 		if(((x-1 == nullX || x+1 == nullX) && y == nullY) || ((y-1 == nullY || y+1 == nullY) && x == nullX)) {
 
 				arr[nullY][nullX] = arr[y][x];
 				arr[y][x] = 0;
-				//clicks++;
+				clicks++; console.log('clicks=', clicks);
+				placeShowResult.innerHTML = 'Your steps - ' + clicks;
+				// -----------------  вывод сообщения о ходах на экран --------------------
+
 		}
 	}; 	//  --> end of this.move method
 	// проверка условия победы
