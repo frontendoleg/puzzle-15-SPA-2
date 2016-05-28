@@ -51,8 +51,9 @@ body
 .bones{
     cursor: pointer;
     background-color: green;
-    border:10px solid #999;
+    /*border:10px solid #999;*/
     position: absolute;
+    -webkit-clip-path: inset(5px 5px 5px 5px round 5px);
 }
 .boneNumber{
     font-family: arial;
@@ -74,10 +75,11 @@ body
     /*display: inline-block;*/
     background-color: #999;
     /*float: left;*/
-    padding: 10px;/*было 15*/
+    /*padding: 10px;/*было 15*/*/
     border-radius: 10px;/*было 15*/
     border-color: red;
-    margin: 0 auto;
-    height: 300px; /* временно */
-    width: 300px; /* временно */
+    /*margin: 0 auto;*/
+    /*height: 300px; /* временно */*/
+    /*width: 300px;  временно */
+    border: 10px solid gray;
 }
