@@ -108,6 +108,15 @@ function init() {
 
 	});
 
+	$(function(){ // обработчик нажатия клавиши New Game
+		var newGameButton = $('#newGameButton');
+		newGameButton.click(function(){
+			console.log ("You pressed NewGame");
+			field.mix(100);
+		});
+
+	});
+
 } // the end of the init function
 
 
