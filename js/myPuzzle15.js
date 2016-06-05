@@ -51,8 +51,8 @@ function init() {
 
 	field.mix(100); // перемешиваем
 
-	function event(x,y){ // функция действия при кликах мыши
-		field.move(x,y);
+	function eventMouse(x,y){ // функция действия при кликах мыши
+		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
 		field.draw(boneSize);
 	}
 
@@ -68,7 +68,7 @@ function init() {
 		if((xBone >= 0 && xBone < 4) && (yBone >= 0 && yBone < 4)){
 			// костяшку сдвинуть можно
 			//alert('xBone = '+xBone + ' yBone = '+yBone);
-			field.move(xBone,yBone);
+			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
 		field.draw(boneSize);
 
 		}
@@ -82,7 +82,7 @@ function init() {
 			var myBone = Math.floor(myField/4); // это размер костяшки в пикселах. Мы знаем, что игровое поле 80vmin а костяшка 20vmin
 			var x = ( e.pageX - fieldSpace.offset().left) / myBone | 0; // координата костяшки в пределах 0-3
 			var y = ( e.pageY - fieldSpace.offset().top) / myBone | 0; // координата костяшки в пределах 0-3
-			event(x,y); // вызов функции действия
+			eventMouse(x,y); // вызов функции действия
 
 		});
 	});
@@ -160,7 +160,7 @@ function Game15(){
 		}
 	}; // --> end of this.draw method
 	// метод перемещает "пятнашку" в пустую клетку
-	this.move = function(x,y) {
+	this.move = function(x,y, ifPlusClicks) {
 		var nullX = getNull().x;
 		var nullY = getNull().y;
 		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
@@ -168,7 +168,9 @@ function Game15(){
 
 				arr[nullY][nullX] = arr[y][x];
 				arr[y][x] = 0;
+				if (ifPlusClicks){
 				clicks++; console.log('clicks=', clicks);
+				}
 				placeShowResult.innerHTML = 'Your steps - ' + clicks;
 				// -----------------  вывод сообщения о ходах на экран --------------------
 
