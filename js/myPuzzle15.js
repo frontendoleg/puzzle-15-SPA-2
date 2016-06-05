@@ -54,7 +54,10 @@ function init() {
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
 		field.draw(boneSize);
-		console.log("field.victory= ",field.victory());
+		//console.log("field.victory().clicks= ",field.victory().clicks);
+		if(field.victory().res){
+			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+		}
 	}
 
 	function eventKey(x,y){ // функция действия при нажатии клавиш
@@ -71,7 +74,10 @@ function init() {
 			//alert('xBone = '+xBone + ' yBone = '+yBone);
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
 			field.draw(boneSize);
-			console.log("field.victory= ",field.victory());
+			//console.log("field.victory().clicks= ",field.victory().clicks);
+			if(field.victory().res){
+				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+			}
 
 		}
 	}
@@ -189,7 +195,7 @@ function Game15(){
 				}
 			}
 		}
-		return res;
+		return {"res":res, "clicks":clicks}; // clicks была доступна внутри Game() - возвращаем ее, делаем доступной
 	}; // --> end of this.victory method
 	// функция возвращает произвольное логическое значение
 	function getRandomBool() {
