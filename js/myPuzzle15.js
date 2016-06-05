@@ -54,6 +54,7 @@ function init() {
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
 		field.draw(boneSize);
+		console.log("field.victory= ",field.victory());
 	}
 
 	function eventKey(x,y){ // функция действия при нажатии клавиш
@@ -69,7 +70,8 @@ function init() {
 			// костяшку сдвинуть можно
 			//alert('xBone = '+xBone + ' yBone = '+yBone);
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
-		field.draw(boneSize);
+			field.draw(boneSize);
+			console.log("field.victory= ",field.victory());
 
 		}
 	}
@@ -200,19 +202,19 @@ function Game15(){
 		console.log('mix starts', stepCount);
 		var x,y;
 		for (var i = 0; i < stepCount; i++) {
-			console.log('i=',i);
+			//console.log('i=',i);
 			var nullX = getNull().x;
 			var nullY = getNull().y;
-			console.log('nullX=', nullX,' nullY=',nullY);
+			//console.log('nullX=', nullX,' nullY=',nullY);
 			var hMove = getRandomBool();
 			var upLeft = getRandomBool();
-			console.log('hMove=',hMove,' upLeft=',upLeft);
+			//console.log('hMove=',hMove,' upLeft=',upLeft);
 			if (!hMove && !upLeft) { y = nullY; x = nullX - 1;}
 			if (hMove && !upLeft) { x = nullX; y = nullY + 1;}
 			if (!hMove && upLeft) { y = nullY; x = nullX + 1;}
 			if (hMove && upLeft) { x = nullX; y = nullY - 1;}
 			if (0 <= x && x <= 3 && 0 <= y && y <=3) {
-				console.log('Coordinats for move x=',x,' y=',y);
+				//console.log('Coordinats for move x=',x,' y=',y);
 				this.move(x,y);
 				this.draw(10);
 			}
