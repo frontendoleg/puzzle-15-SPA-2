@@ -113,6 +113,7 @@ function init() {
 		newGameButton.click(function(){
 			console.log ("You pressed NewGame");
 			field.mix(100);
+			placeShowResult.innerHTML = 'Your steps - ' + field.showClicks(); // обновляем отображение счетчика
 		});
 
 	});
@@ -237,6 +238,9 @@ function Game15(){
 	clicks = 0;
 	console.log('why clicks is not zero', clicks);
 	}; //  --> end of this.mix method
+	this.showClicks = function(){ // метод возвращает текущее значение clicks из объекта пятнашек field
+		return clicks;
+	}
 }
 
 function makeGameField(fieldSize) {
