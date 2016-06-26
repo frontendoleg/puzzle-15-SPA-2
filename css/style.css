@@ -124,3 +124,25 @@ body
    background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
    color: #fff;
    }
+   /* Media Queries */
+
+@media only screen and (max-width: 940px),
+only screen and (max-device-width: 940px){
+
+}
+
+
+@media only screen and (max-width: 720px),
+only screen and (max-device-width: 720px){
+
+}
+
+@media only screen and (max-width: 530px),
+only screen and (max-device-width: 530px){
+
+}
+
+@media only screen and (max-width: 320px),
+only screen and (max-device-width: 320px){
+
+}
