@@ -24,8 +24,7 @@ body
     -moz-border-radius: 10px;
     border-radius: 10px;
 	position:relative;
-	left:50%;
-	margin-left:-300px;
+	margin: 0 auto;
 }
 #menu
 {
@@ -75,27 +74,49 @@ body
     background-color: #999;
     border: 10px solid gray;
     border-radius: 10px;
+    width: 80%;
+    height: 80%;
 }
 
    /* Media Queries */
 
 @media only screen and (max-width: 940px),
 only screen and (max-device-width: 940px){
-
+  .block{
+    width: 500px;
+    border: 3px solid red;
+  }
+/*wrapper = 500px */
+/* width = 720px-940px */
 }
 
 
 @media only screen and (max-width: 720px),
 only screen and (max-device-width: 720px){
-
+  .block{
+    width: 400px;
+    border: 3px solid green;
+  }
+/*wrapper = 400px */
+/*width = 530-720px */
 }
 
 @media only screen and (max-width: 530px),
 only screen and (max-device-width: 530px){
-
+  .block{
+    width: 300px;
+    padding: 2px;
+  }
+/*wrapper = 300px */
+/*width = 320-530px */
 }
 
 @media only screen and (max-width: 320px),
 only screen and (max-device-width: 320px){
-
+  .block{
+    width: 98%;
+    padding: 2px;
+  }
+/*wrapper = 80%*/
+/*width<320px*/
 }
