@@ -49,7 +49,7 @@ function init() {
 	// console.log ('point48');
 	console.timeEnd("draw"); // рисуем наши пятнашки
 
-	field.mix(1); // перемешиваем
+	field.mix(0); // перемешиваем
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
@@ -131,45 +131,279 @@ function Game15(){
 	// метод, рисующий наши пятнашки на экране
 	this.draw = function(boneSize) {
 		// console.log('arr',arr);
-		for (var yi = 0; yi < 4; yi++) {
-			for (var xj = 0; xj < 4; xj++) {
-				if (arr[yi][xj] > 0) {
+				if (arr[0][0] > 0) {
 					// console.log('!!! Bones!!!')
-					$("<div></div>",{
-					'width': boneSize+"vmin",
-					'height': boneSize+"vmin",})// создаем костяшки
+					$("<div></div>")// создаем костяшки
 						.addClass("bones")
-						.css({
-						'left': xj*boneSize+"vmin",
-						'top': yi*boneSize+"vmin",})// стили костяшки
+						.addClass("b-00")// стили костяшки
 							.appendTo('.wrapper')
-							.append($('<p></p>')).text(arr[yi][xj])	// пишем цифры
-								.css({
-									'text-align':'center',
-									'color':'white',
-									'text-weight':'bold',
-									'font-family':'arial',
-									'line-height':boneSize+"vmin",
-									'font-size':Math.floor(boneSize/3)+"vmin",
-									'color':'white',});	// размер шрифта 1/3
+							.append($('<p></p>')).text(arr[0][0])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
 				}
 				
 				else{
-					$("<div></div>",{
-					'width': boneSize+"vmin",
-					'height': boneSize+"vmin",})// создаем костяшки
-						.addClass("bones")
-						.css({
-						'background-color':'#999',
-						'-webkit-clip-path':'inset(2px 2px 2px 2px round 2px)', // это цвет пустой костяшки
-						'left': xj*boneSize+"vmin",
-						'top': yi*boneSize+"vmin",
-						'margin-left':'auto',
-						'margin-right':'auto',}) // стили костяшки
-								.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
-			}
-		}
+				
+				if (arr[0][1] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[0][1])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[0][2] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[0][2])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[0][3] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[0][3])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[1][0] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[1][0])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[1][1] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[1][1])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[1][2] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[1][2])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[1][3] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[1][3])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[2][0] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[2][0])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[2][1] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[2][1])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[2][2] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[2][2])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[2][3] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[2][3])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[3][0] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[3][0])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[3][1] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[3][1])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[3][2] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[3][2])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+				
+				if (arr[3][3] > 0) {
+					// console.log('!!! Bones!!!')
+					$("<div></div>")// создаем костяшки
+						.addClass("bones")
+						.addClass("b-00")// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[3][3])	// пишем цифры
+							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+				}
+				
+				else{
+					$("<div></div>")// создаем костяшки
+						.addClass("bones-white") // стили белой костяшки
+						.addClass("b-00") // стили костяшки
+						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+				}
+			
+		
 	}; // --> end of this.draw method
 	
 	// метод перемещает "пятнашку" в пустую клетку
@@ -245,8 +479,8 @@ function Game15(){
 function makeGameField(fieldSize) {
 	$('.wrapper')
 	.css({
-		'width': fieldSize+"vmin",
-		'height': fieldSize+"vmin",
+		/*'width': fieldSize+"vmin",
+		'height': fieldSize+"vmin",*/
 		'background-color': '#999',
 	 	'margin': '0 auto',
 	 	'position': 'relative',}).attr('id','fff');	// стили поля
