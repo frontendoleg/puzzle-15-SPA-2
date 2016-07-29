@@ -134,58 +134,52 @@ function Game15(){
 		for (var yi = 0; yi < 4; yi++) {
 			for (var xj = 0; xj < 4; xj++) {
 				if (arr[yi][xj] > 0) {
-											// console.log('!!! Bones!!!')
-											$("<div></div>",{
-													'width': boneSize+"vmin",
-													'height': boneSize+"vmin",})		// создаем костяшки
-												.addClass("bones")
-												.css({
-
-
-
-													'left': xj*boneSize+"vmin",
-													'top': yi*boneSize+"vmin",})			// стили костяшки
-
-												.appendTo('.wrapper')
-												.append($('<p></p>')).text(arr[yi][xj])			// пишем цифры
-												.css({
-													'text-align':'center',
-													'color':'white',
-													'text-weight':'bold',
-													'font-family':'arial',
-													'line-height':boneSize+"vmin",
-													'font-size':Math.floor(boneSize/3)+"vmin",
-													'color':'white',});									// размер шрифта 1/3
+					// console.log('!!! Bones!!!')
+					$("<div></div>",{
+					'width': boneSize+"vmin",
+					'height': boneSize+"vmin",})// создаем костяшки
+						.addClass("bones")
+						.css({
+						'left': xj*boneSize+"vmin",
+						'top': yi*boneSize+"vmin",})// стили костяшки
+							.appendTo('.wrapper')
+							.append($('<p></p>')).text(arr[yi][xj])	// пишем цифры
+								.css({
+									'text-align':'center',
+									'color':'white',
+									'text-weight':'bold',
+									'font-family':'arial',
+									'line-height':boneSize+"vmin",
+									'font-size':Math.floor(boneSize/3)+"vmin",
+									'color':'white',});	// размер шрифта 1/3
 				}
+				
 				else{
-											$("<div></div>",{
-													'width': boneSize+"vmin",
-													'height': boneSize+"vmin",})		// создаем костяшки
-												.addClass("bones")
-												.css({
-													'background-color':'#999',
-													'-webkit-clip-path':'inset(2px 2px 2px 2px round 2px)', // это цвет пустой костяшки
-
-
-													'left': xj*boneSize+"vmin",
-													'top': yi*boneSize+"vmin",
-													'margin-left':'auto',
-													'margin-right':'auto',})			// стили костяшки
-
-												.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
+					$("<div></div>",{
+					'width': boneSize+"vmin",
+					'height': boneSize+"vmin",})// создаем костяшки
+						.addClass("bones")
+						.css({
+						'background-color':'#999',
+						'-webkit-clip-path':'inset(2px 2px 2px 2px round 2px)', // это цвет пустой костяшки
+						'left': xj*boneSize+"vmin",
+						'top': yi*boneSize+"vmin",
+						'margin-left':'auto',
+						'margin-right':'auto',}) // стили костяшки
+								.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 			}
 		}
 	}; // --> end of this.draw method
+	
 	// метод перемещает "пятнашку" в пустую клетку
 	this.move = function(x,y, ifPlusClicks) {
 		var nullX = getNull().x;
 		var nullY = getNull().y;
 		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
 		if(((x-1 == nullX || x+1 == nullX) && y == nullY) || ((y-1 == nullY || y+1 == nullY) && x == nullX)) {
-
-				arr[nullY][nullX] = arr[y][x];
-				arr[y][x] = 0;
+			arr[nullY][nullX] = arr[y][x];
+			arr[y][x] = 0;
 				if (ifPlusClicks){
 				clicks++; console.log('clicks=', clicks);
 				}
@@ -194,6 +188,7 @@ function Game15(){
 
 		}
 	}; 	//  --> end of this.move method
+	
 	// проверка условия победы
 	this.victory = function() {
 		var e = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
@@ -207,12 +202,14 @@ function Game15(){
 		}
 		return {"res":res, "clicks":clicks}; // clicks была доступна внутри Game() - возвращаем ее, делаем доступной
 	}; // --> end of this.victory method
+	
 	// функция возвращает произвольное логическое значение
 	function getRandomBool() {
 		if (Math.floor(Math.random() * 2) === 0) {
 			return true;
 		} else {return false;}  // ----------------------------------------костыль
 	};  // --> end of getRandomBool function
+	
 	// метод перемешивает пятнашки
 	this.mix = function(stepCount) {
 		console.log('mix starts', stepCount);
@@ -235,10 +232,12 @@ function Game15(){
 				this.draw(10);
 			}
 		}
-	clicks = 0;
-	console.log('why clicks is not zero', clicks);
+		clicks = 0;
+		console.log('why clicks is not zero', clicks);
 	}; //  --> end of this.mix method
-	this.showClicks = function(){ // метод возвращает текущее значение clicks из объекта пятнашек field
+	
+	// метод возвращает текущее значение clicks из объекта пятнашек field
+	this.showClicks = function(){ 
 		return clicks;
 	}
 }
@@ -250,5 +249,5 @@ function makeGameField(fieldSize) {
 		'height': fieldSize+"vmin",
 		'background-color': '#999',
 	 	'margin': '0 auto',
-	 	'position': 'relative',}).attr('id','fff');		// стили поля
+	 	'position': 'relative',}).attr('id','fff');	// стили поля
 }
