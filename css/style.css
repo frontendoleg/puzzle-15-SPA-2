@@ -61,6 +61,8 @@ body{
     cursor: pointer;
     background-color: green;
     position: absolute;
+	width: 125px;
+	height: 125px;
     -webkit-clip-path: inset(5px 5px 5px 5px round 5px);
 }
 
@@ -91,6 +93,8 @@ body{
     border-radius: 10px;
     width: 500px;
     height: 500px;
+	margin: 0 auto;
+	position: relative;
 }
 
 	.b-00{
@@ -266,6 +270,11 @@ only screen and (max-device-width: 940px){
 		left: 300px;
 	}
 	
+	.bones, .bones-white{
+    width: 100px;
+	height: 100px;
+}
+	
 		
 /*block = 500px */
 /* width = 720px-940px */
@@ -363,6 +372,11 @@ only screen and (max-device-width: 720px){
 		left: 225px;
 	}
 	
+	.bones, .bones-white{
+    width: 75px;
+	height: 75px;
+}
+	
 	
 /*block = 400px */
 /*width = 530-720px */
@@ -459,6 +473,11 @@ only screen and (max-device-width: 530px){
 		left: 150px;
 	}
 	
+	.bones, .bones-white{
+    width: 50px;
+	height: 50px;
+}
+	
 /*block = 300px */
 /*width = 320-530px */
 }
@@ -466,7 +485,7 @@ only screen and (max-device-width: 530px){
 @media only screen and (max-width: 320px),
 only screen and (max-device-width: 320px){
 	.block{
-		width: 98%;
+		width: 96%;
 		padding: 2px;
 	}
 	.wrapper{
@@ -553,6 +572,11 @@ only screen and (max-device-width: 320px){
 		top: 120px;
 		left: 120px;
 	}
+	
+	.bones, .bones-white{
+    width: 40px;
+	height: 40px;
+}
 	
 /*wrapper = 80%*/
 /*width<320px*/
