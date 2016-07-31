@@ -49,7 +49,7 @@ function init() {
 	// console.log ('point48');
 	console.timeEnd("draw"); // рисуем наши пятнашки
 
-	field.mix(0); // перемешиваем
+	field.mix(100); // перемешиваем
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов

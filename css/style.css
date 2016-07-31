@@ -20,8 +20,16 @@ body{
 	border: 1px dashed blue;
 }
 
+#rules h3 {
+	text-align: center;
+}
+
+#rules p {
+	text-align: justify;
+}
 .buttons{
-	border: 1px dotted green;
+	/*border: 1px dotted green;*/
+	margin-bottom: 30px;
 	
 }
 
