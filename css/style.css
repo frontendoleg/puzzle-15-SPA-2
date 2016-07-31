@@ -63,7 +63,10 @@ body{
     position: absolute;
 	width: 125px;
 	height: 125px;
-    -webkit-clip-path: inset(5px 5px 5px 5px round 5px);
+    /*-webkit-clip-path: inset(5px 5px 5px 5px round 5px);*/
+	border: 4px solid #999;
+	box-sizing: border-box;
+	border-radius: 12px;
 }
 
 .bones-white{
@@ -186,6 +189,17 @@ body{
 		font-size: 41px;
 		
 	}
+	
+	.borders{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 125px;
+		height: 125px;
+		background-color: none;
+		border: 5px solid #999;
+		border-radius: 5px;
+	}
 
    /* Media Queries */
 
@@ -283,6 +297,8 @@ only screen and (max-device-width: 940px){
 	.bones, .bones-white{
     width: 100px;
 	height: 100px;
+	border: 3px solid #999;
+	border-radius: 9px;
 	}
 	
 	.bone-text{
@@ -391,6 +407,8 @@ only screen and (max-device-width: 720px){
 	.bones, .bones-white{
     width: 75px;
 	height: 75px;
+	border: 2px solid #999;
+	border-radius: 8px;
 	}
 	
 	.bone-text{
@@ -498,6 +516,8 @@ only screen and (max-device-width: 530px){
 	.bones, .bones-white{
     width: 50px;
 	height: 50px;
+	border: 1px solid #999;
+	border-radius: 4px;
 	}
 	
 	.bone-text{
@@ -604,6 +624,8 @@ only screen and (max-device-width: 320px){
 	.bones, .bones-white{
     width: 40px;
 	height: 40px;
+	border: 1px solid #999;
+	border-radius: 4px;
 	}
 	
 	.bone-text{

@@ -131,7 +131,7 @@ function Game15(){
 	// метод, рисующий наши пятнашки на экране
 	this.draw = function(boneSize) {
 		// console.log('arr',arr);
-				$("#fff").empty();
+				$("#fff").empty(); // очищаем игровое поле перед началом отрисовки
 				if (arr[0][0] > 0) {
 					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
@@ -139,7 +139,8 @@ function Game15(){
 						.addClass("b-00")// стили костяшки
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][0])	// пишем цифры
-							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+							.addClass("bone-text"); // размер шрифта 1/3 определяем в медиазапросах
+
 				}
 
 				else{
@@ -157,6 +158,7 @@ function Game15(){
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][1])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
+
 				}
 
 				else{
