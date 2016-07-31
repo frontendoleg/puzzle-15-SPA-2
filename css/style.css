@@ -176,6 +176,16 @@ body{
 		top: 375px;
 		left: 375px;
 	}
+	
+	.bone-text{
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-family: arial;
+		line-height: 125px;
+		font-size: 41px;
+		
+	}
 
    /* Media Queries */
 
@@ -273,7 +283,13 @@ only screen and (max-device-width: 940px){
 	.bones, .bones-white{
     width: 100px;
 	height: 100px;
-}
+	}
+	
+	.bone-text{
+		line-height: 100px;
+		font-size: 33px;
+		
+	}
 	
 		
 /*block = 500px */
@@ -375,7 +391,13 @@ only screen and (max-device-width: 720px){
 	.bones, .bones-white{
     width: 75px;
 	height: 75px;
-}
+	}
+	
+	.bone-text{
+		line-height: 75px;
+		font-size: 25px;
+		
+	}
 	
 	
 /*block = 400px */
@@ -476,7 +498,13 @@ only screen and (max-device-width: 530px){
 	.bones, .bones-white{
     width: 50px;
 	height: 50px;
-}
+	}
+	
+	.bone-text{
+		line-height: 50px;
+		font-size: 16px;
+		
+	}
 	
 /*block = 300px */
 /*width = 320-530px */
@@ -576,7 +604,14 @@ only screen and (max-device-width: 320px){
 	.bones, .bones-white{
     width: 40px;
 	height: 40px;
-}
+	}
+	
+	.bone-text{
+		line-height: 40px;
+		font-size: 13px;
+		font-weight: normal;
+		
+	}
 	
 /*wrapper = 80%*/
 /*width<320px*/
