@@ -42,6 +42,10 @@ body{
         margin-right: 20px;
     }
 
+    #menu ul li:first-child{
+    	margin-left: 38px;
+    }
+
 #rules h3 {
 	text-align: center;
 }
@@ -225,6 +229,19 @@ only screen and (max-device-width: 940px){
 	#menu{
 		width: 500px;
 	}
+
+	#menu ul li:first-child{
+		margin-left: 10px;
+	}
+
+	#menu ul li:last-child{
+		margin-right: 10px;
+	}
+
+	.button{
+		width: 100px;
+	}
+
 	.wrapper{
 		width: 400px;
 		height: 400px;
@@ -339,6 +356,19 @@ only screen and (max-device-width: 720px){
 	#menu{
 		width: 400px;
 	}
+
+	#menu ul li:first-child{
+		margin-left: 8px;
+	}
+
+	#menu ul li:last-child{
+		margin-right: 0;
+	}
+
+	.button{
+		width: 70px;
+	}
+
 	.wrapper{
 		width: 300px;
 		height: 300px;
@@ -453,6 +483,29 @@ only screen and (max-device-width: 530px){
 		width: 300px;
 		padding: 2px;
 	}
+
+	#menu ul{
+		position: relative;
+	}
+
+	#menu ul li{
+		float: none;
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 10px;
+
+	}
+
+	#menu ul li:first-child{
+		margin-left: 0;
+		padding-top: 10px;
+	}
+
+	.button{
+		width: 75%;
+		margin: 0 auto;
+	}
+
 	.wrapper{
 		width: 200px;
 		height: 200px;
