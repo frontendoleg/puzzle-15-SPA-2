@@ -17,7 +17,8 @@ body{
 }
 
 #menu{
-	border: 1px dashed blue;
+	border: 1px solid green;
+	border-radius: 5px;
 }
 
 #rules h3 {
@@ -30,7 +31,7 @@ body{
 .buttons{
 	/*border: 1px dotted green;*/
 	margin-bottom: 30px;
-	
+
 }
 
 .block{
@@ -51,14 +52,14 @@ body{
 	margin-left:-150px;
     margin-bottom: 20px;
 }
-    
+
 	#menu ul{
         padding: 0;
         margin: 0;
         list-style: none;
         height: 2em;
     }
-    
+
 	#menu ul li{
         float: left;
         margin-right: 20px;
@@ -112,82 +113,82 @@ body{
 		top: 0;
 		left: 0;
 	}
-	
+
 	.b-01{
 		top: 0;
 		left: 125px;
 	}
-	
+
 	.b-02{
 		top: 0;
 		left: 250px;
 	}
-	
+
 	.b-03{
 		top: 0;
 		left: 375px;
 	}
-	
+
 	.b-04{
 		top: 125px;
 		left: 0;
 	}
-	
+
 	.b-05{
 		top: 125px;
 		left: 125px;
 	}
-	
+
 	.b-06{
 		top: 125px;
 		left: 250px;
 	}
-	
+
 	.b-07{
 		top: 125px;
 		left: 375px;
 	}
-	
+
 	.b-08{
 		top: 250px;
 		left: 0;
 	}
-	
+
 	.b-09{
 		top: 250px;
 		left: 125px;
 	}
-	
+
 	.b-10{
 		top: 250px;
 		left: 250px;
 	}
-	
+
 	.b-11{
 		top: 250px;
 		left: 375px;
 	}
-	
+
 	.b-12{
 		top: 375px;
 		left: 0;
 	}
-	
+
 	.b-13{
 		top: 375px;
 		left: 125px;
 	}
-	
+
 	.b-14{
 		top: 375px;
 		left: 250px;
 	}
-	
+
 	.b-15{
 		top: 375px;
 		left: 375px;
 	}
-	
+
 	.bone-text{
 		color: white;
 		text-align: center;
@@ -195,9 +196,9 @@ body{
 		font-family: arial;
 		line-height: 125px;
 		font-size: 41px;
-		
+
 	}
-	
+
 	.borders{
 		position: absolute;
 		top: 0;
@@ -221,101 +222,101 @@ only screen and (max-device-width: 940px){
 		width: 400px;
 		height: 400px;
 	}
-	
+
 	.b-00{
 		top: 0;
 		left: 0;
 	}
-	
+
 	.b-01{
 		top: 0;
 		left: 100px;
 	}
-	
+
 	.b-02{
 		top: 0;
 		left: 200px;
 	}
-	
+
 	.b-03{
 		top: 0;
 		left: 300px;
 	}
-	
+
 	.b-04{
 		top: 100px;
 		left: 0;
 	}
-	
+
 	.b-05{
 		top: 100px;
 		left: 100px;
 	}
-	
+
 	.b-06{
 		top: 100px;
 		left: 200px;
 	}
-	
+
 	.b-07{
 		top: 100px;
 		left: 300px;
 	}
-	
+
 	.b-08{
 		top: 200px;
 		left: 0;
 	}
-	
+
 	.b-09{
 		top: 200px;
 		left: 100px;
 	}
-	
+
 	.b-10{
 		top: 200px;
 		left: 200px;
 	}
-	
+
 	.b-11{
 		top: 200px;
 		left: 300px;
 	}
-	
+
 	.b-12{
 		top: 300px;
 		left: 0;
 	}
-	
+
 	.b-13{
 		top: 300px;
 		left: 100px;
 	}
-	
+
 	.b-14{
 		top: 300px;
 		left: 200px;
 	}
-	
+
 	.b-15{
 		top: 300px;
 		left: 300px;
 	}
-	
+
 	.bones, .bones-white{
     width: 100px;
 	height: 100px;
 	border: 3px solid #999;
 	border-radius: 9px;
 	}
-	
+
 	.bone-text{
 		line-height: 100px;
 		font-size: 33px;
-		
+
 	}
-	
-		
+
+
 /*block = 500px */
 /* width = 720px-940px */
 }
@@ -331,101 +332,101 @@ only screen and (max-device-width: 720px){
 		width: 300px;
 		height: 300px;
 	}
-	
+
 	.b-00{
 		top: 0;
 		left: 0;
 	}
-	
+
 	.b-01{
 		top: 0;
 		left: 75px;
 	}
-	
+
 	.b-02{
 		top: 0;
 		left: 150px;
 	}
-	
+
 	.b-03{
 		top: 0;
 		left: 225px;
 	}
-	
+
 	.b-04{
 		top: 75px;
 		left: 0;
 	}
-	
+
 	.b-05{
 		top: 75px;
 		left: 75px;
 	}
-	
+
 	.b-06{
 		top: 75px;
 		left: 150px;
 	}
-	
+
 	.b-07{
 		top: 75px;
 		left: 225px;
 	}
-	
+
 	.b-08{
 		top: 150px;
 		left: 0;
 	}
-	
+
 	.b-09{
 		top: 150px;
 		left: 75px;
 	}
-	
+
 	.b-10{
 		top: 150px;
 		left: 150px;
 	}
-	
+
 	.b-11{
 		top: 150px;
 		left: 225px;
 	}
-	
+
 	.b-12{
 		top: 225px;
 		left: 0;
 	}
-	
+
 	.b-13{
 		top: 225px;
 		left: 75px;
 	}
-	
+
 	.b-14{
 		top: 225px;
 		left: 150px;
 	}
-	
+
 	.b-15{
 		top: 225px;
 		left: 225px;
 	}
-	
+
 	.bones, .bones-white{
     width: 75px;
 	height: 75px;
 	border: 2px solid #999;
 	border-radius: 8px;
 	}
-	
+
 	.bone-text{
 		line-height: 75px;
 		font-size: 25px;
-		
+
 	}
-	
-	
+
+
 /*block = 400px */
 /*width = 530-720px */
 }
@@ -440,100 +441,100 @@ only screen and (max-device-width: 530px){
 		width: 200px;
 		height: 200px;
 	}
-	
+
 	.b-00{
 		top: 0;
 		left: 0;
 	}
-	
+
 	.b-01{
 		top: 0;
 		left: 50px;
 	}
-	
+
 	.b-02{
 		top: 0;
 		left: 100px;
 	}
-	
+
 	.b-03{
 		top: 0;
 		left: 150px;
 	}
-	
+
 	.b-04{
 		top: 50px;
 		left: 0;
 	}
-	
+
 	.b-05{
 		top: 50px;
 		left: 50px;
 	}
-	
+
 	.b-06{
 		top: 50px;
 		left: 100px;
 	}
-	
+
 	.b-07{
 		top: 50px;
 		left: 150px;
 	}
-	
+
 	.b-08{
 		top: 100px;
 		left: 0;
 	}
-	
+
 	.b-09{
 		top: 100px;
 		left: 50px;
 	}
-	
+
 	.b-10{
 		top: 100px;
 		left: 100px;
 	}
-	
+
 	.b-11{
 		top: 100px;
 		left: 150px;
 	}
-	
+
 	.b-12{
 		top: 150px;
 		left: 0;
 	}
-	
+
 	.b-13{
 		top: 150px;
 		left: 50px;
 	}
-	
+
 	.b-14{
 		top: 150px;
 		left: 100px;
 	}
-	
+
 	.b-15{
 		top: 150px;
 		left: 150px;
 	}
-	
+
 	.bones, .bones-white{
     width: 50px;
 	height: 50px;
 	border: 1px solid #999;
 	border-radius: 4px;
 	}
-	
+
 	.bone-text{
 		line-height: 50px;
 		font-size: 16px;
-		
+
 	}
-	
+
 /*block = 300px */
 /*width = 320-530px */
 }
@@ -548,101 +549,101 @@ only screen and (max-device-width: 320px){
 		width: 160px;
 		height: 160px;
 	}
-	
+
 	.b-00{
 		top: 0;
 		left: 0;
 	}
-	
+
 	.b-01{
 		top: 0;
 		left: 40px;
 	}
-	
+
 	.b-02{
 		top: 0;
 		left: 80px;
 	}
-	
+
 	.b-03{
 		top: 0;
 		left: 120px;
 	}
-	
+
 	.b-04{
 		top: 40px;
 		left: 0;
 	}
-	
+
 	.b-05{
 		top: 40px;
 		left: 40px;
 	}
-	
+
 	.b-06{
 		top: 40px;
 		left: 80px;
 	}
-	
+
 	.b-07{
 		top: 40px;
 		left: 120px;
 	}
-	
+
 	.b-08{
 		top: 80px;
 		left: 0;
 	}
-	
+
 	.b-09{
 		top: 80px;
 		left: 40px;
 	}
-	
+
 	.b-10{
 		top: 80px;
 		left: 80px;
 	}
-	
+
 	.b-11{
 		top: 80px;
 		left: 120px;
 	}
-	
+
 	.b-12{
 		top: 120px;
 		left: 0;
 	}
-	
+
 	.b-13{
 		top: 120px;
 		left: 40px;
 	}
-	
+
 	.b-14{
 		top: 120px;
 		left: 80px;
 	}
-	
+
 	.b-15{
 		top: 120px;
 		left: 120px;
 	}
-	
+
 	.bones, .bones-white{
     width: 40px;
 	height: 40px;
 	border: 1px solid #999;
 	border-radius: 4px;
 	}
-	
+
 	.bone-text{
 		line-height: 40px;
 		font-size: 13px;
 		font-weight: normal;
-		
+
 	}
-	
+
 /*wrapper = 80%*/
 /*width<320px*/
 }
