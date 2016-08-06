@@ -1,13 +1,13 @@
 /* --------------------  button styles ----------------- */
 .button {
-   border: 1px solid #0a3c59;
-   background: #3e779d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   border: 1px solid #0a590c; /*  #0a3c59 -> 0a590c ,  202 degree -> 122 degree*/
+   background: #3e9e44; /* #3e779d -> #3e9e44 , 204 degree -> 124 degree*/
+   background: -webkit-gradient(linear, left top, left bottom, from(#65d66c), to(#3e9e44));/*#65a9d7 -> #65d66c 204 degree -> 124 degree*/
+   background: -webkit-linear-gradient(top, #65d66c, #3e9e44);
+   background: -moz-linear-gradient(top, #65d66c, #3e9e44);
+   background: -ms-linear-gradient(top, #65d66c, #3e9e44);
+   background: -o-linear-gradient(top, #65d66c, #3e9e44);
+   background-image: -ms-linear-gradient(top, #65d66c 0%, #3e9e44 100%);
    padding: 10.5px 21px;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
@@ -15,38 +15,38 @@
    -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   text-shadow: #7ea4bd 0 1px 0;
-   color: #06426c;
+   text-shadow: #7ebd83 0 1px 0; /* #7ea4bd -> #7ebd83, 204 degree -> 124 degree*/
+   color: #066b0f;/* #06426c -> #066b0f, 205 degree -> 125 degree*/
    font-size: 14px;
    font-family: helvetica, serif;
    text-decoration: none;
    vertical-align: middle;
    }
 .button:hover {
-   border: 1px solid #0a3c59;
-   text-shadow: #1e4158 0 1px 0;
-   background: #3e779d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   border: 1px solid #0a590c;  /*  #0a3c59 -> 0a590c , 202 degree -> 122 degree*/
+   text-shadow: #1e5922 0 1px 0;/* #1e4158 -> #1e5922, 204 degree -> 124 degree*/
+   background: #3e9e44;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65d66c), to(#3e9e44));
+   background: -webkit-linear-gradient(top, #65d66c, #3e9e44);
+   background: -moz-linear-gradient(top, #65d66c, #3e9e44);
+   background: -ms-linear-gradient(top, #65d66c, #3e9e44);
+   background: -o-linear-gradient(top, #65d66c, #3e9e44);
+   background-image: -ms-linear-gradient(top, #65d66c 0%, #3e9e44 100%);
    color: #fff;
    }
 .button:active {
-   text-shadow: #1e4158 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+   text-shadow: #1e5922 0 1px 0;
+   border: 1px solid #0a590c;  /*  #0a3c59 -> 0a590c, 202 degree -> 122 degree*/
+   background: #65d66c;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e9e44), to(#3e9e44));
+   background: -webkit-linear-gradient(top, #3e9e44, #65d66c);
+   background: -moz-linear-gradient(top, #3e9e44, #65d66c);
+   background: -ms-linear-gradient(top, #3e9e44, #65d66c);
+   background: -o-linear-gradient(top, #3e9e44, #65d66c);
+   background-image: -ms-linear-gradient(top, #3e9e44 0%, #65d66c 100%);
    color: #fff;
    }
-   
+
    /*a.button {
   font-weight: 700;
   color: white;
@@ -56,7 +56,7 @@
   background: rgb(64,199,129);
   box-shadow: 0 -3px rgb(53,167,110) inset;
   transition: 0.2s;
-} 
+}
 a.button:hover { background: rgb(53, 167, 110); }
 a.button:active {
   background: rgb(33,147,90);
