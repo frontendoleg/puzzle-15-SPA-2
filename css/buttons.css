@@ -75,6 +75,7 @@
    vertical-align: middle;
    display: block;
    width: 120px;
+   float: left;
    }
 .button-new-game:hover {
    border: 1px solid #0a590c;  /*  #0a3c59 -> 0a590c , 202 degree -> 122 degree*/
