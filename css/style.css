@@ -54,6 +54,10 @@ body{
 	text-align: justify;
 }
 
+#records h3 {
+	text-align: center;
+}
+
 .buttons{
 	margin-bottom: 30px;
 
