@@ -85,6 +85,8 @@ function init() {
 	$(function(){ // обработчик кликов мыши
 		var fieldSpace = $('#fff');
 		fieldSpace.click(function(e){
+			e.preventDefault(); // preventDefault
+			e.stopPropagation(); // stopPropagation
 			var br = this.getBoundingClientRect(); // br - это область клиента, на которую произвели клик, то есть игровое поле
 			var myField = br.right - br.left; // это ширина игрового поля в пикселах
 			var myBone = Math.floor(myField/4); // это размер костяшки в пикселах. Мы знаем, что игровое поле 80vmin а костяшка 20vmin
@@ -98,6 +100,8 @@ function init() {
 	$(function(){ // обработчик клавиатуры
 		var body = $('body');
 		body.keydown(function(e){
+			e.preventDefault(); // preventDefault
+			e.stopPropagation(); // stopPropagation
 			switch (e.which) {
 				case 37 : eventKey(1,0);break; // хотим сместить костяшку с правой позиции (+1) горизонтали и на 0 по вертикали
 				case 39 : eventKey(-1,0);break; // хотим сместить костяшку с левой позиции (-1) по горизонтали
