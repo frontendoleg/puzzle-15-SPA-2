@@ -9,7 +9,7 @@ html{
 
 body{
 	margin:0;
-	padding:20px 5px 5px 5px;
+	padding:20px 0 5px 0;
 	width:100%;
 	background:#000;
     font-family: Verdana, Geneva, sans-serif;
@@ -66,7 +66,7 @@ p#placeShowResult {
 /*.block - это оболочка игрового поля*/
 .block{
     width: 600px;
-    border: 1px solid #000;
+    border: 1px solid green;
     padding: 20px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -227,7 +227,7 @@ p#placeShowResult {
 only screen and (max-device-width: 940px){
 	.block{
 		width: 500px;
-		border: 3px solid red;
+		/*border: 3px solid red;*/
 	}
 
 	#menu{
@@ -354,7 +354,7 @@ only screen and (max-device-width: 940px){
 only screen and (max-device-width: 720px){
 	.block{
 		width: 400px;
-		border: 3px solid green;
+		/*border: 3px solid green;*/
 	}
 
 	#menu{
@@ -480,8 +480,8 @@ only screen and (max-device-width: 720px){
 only screen and (max-device-width: 530px){
 	.block{
 		width: 300px;
-		/*padding: 2px;*/
-		border: 1px solid orange;
+		padding: 0;
+		/*border: 1px solid orange;*/
 		padding-bottom: 10px;
 	}
 
@@ -632,7 +632,7 @@ only screen and (max-device-width: 320px){
 	.block{
 		width: 96%;
 		/*padding: 2px;*/
-		border: 1px solid yellow;
+		/*border: 1px solid yellow;*/
 		padding-bottom: 10px;
 	}
 
