@@ -507,6 +507,13 @@ only screen and (max-device-width: 530px){
 		padding-top: 10px;
 	}
 
+	#rules p {
+		padding: 15px;
+	}
+
+	#records p {
+		padding: 15px;
+	}
 	.button{
 		width: 75%;
 		margin: 0 auto;
