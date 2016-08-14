@@ -59,6 +59,10 @@ body{
 
 }
 
+p#placeShowResult {
+	font-size: 1.5rem;
+}
+
 /*.block - это оболочка игрового поля*/
 .block{
     width: 600px;
@@ -476,7 +480,9 @@ only screen and (max-device-width: 720px){
 only screen and (max-device-width: 530px){
 	.block{
 		width: 300px;
-		padding: 2px;
+		/*padding: 2px;*/
+		border: 1px solid orange;
+		padding-bottom: 10px;
 	}
 
 	#menu{
@@ -504,6 +510,19 @@ only screen and (max-device-width: 530px){
 	.button{
 		width: 75%;
 		margin: 0 auto;
+	}
+
+	.button-new-game {
+		width: 75%;
+		margin: 0 auto;
+		float: none;
+		margin-top: 10px;
+	}
+
+	#placeShowResult {
+		float: none !important;
+		text-align: center;
+		margin-top: 15px !important;
 	}
 
 	.wrapper{
@@ -612,7 +631,9 @@ only screen and (max-device-width: 530px){
 only screen and (max-device-width: 320px){
 	.block{
 		width: 96%;
-		padding: 2px;
+		/*padding: 2px;*/
+		border: 1px solid yellow;
+		padding-bottom: 10px;
 	}
 
 	#menu{
