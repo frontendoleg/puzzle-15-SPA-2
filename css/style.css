@@ -95,6 +95,7 @@ p#placeShowResult {
 
 .bones-white{
 	background-color: #999;
+	z-index: -10; /* для того, чтобы пятнашки могли спокойно наезжать на пустой элемент*/
 }
 
 .boneNumber{

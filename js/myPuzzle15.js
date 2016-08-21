@@ -53,7 +53,7 @@ function init() {
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
-		field.draw(boneSize);
+		//field.draw(boneSize);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//console.log("field.victory().clicks= ",field.victory().clicks);
 		if(field.victory().res){
 			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
@@ -73,7 +73,7 @@ function init() {
 			// костяшку сдвинуть можно
 			//alert('xBone = '+xBone + ' yBone = '+yBone);
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
-			field.draw(boneSize);
+			field.draw(boneSize);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			//console.log("field.victory().clicks= ",field.victory().clicks);
 			if(field.victory().res){
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
@@ -463,9 +463,116 @@ function Game15(){
 	this.move = function(x,y, ifPlusClicks) {
 		var nullX = getNull().x;
 		var nullY = getNull().y;
+		var getTargetBone; // определяем DOM - элемент, на который нажали
+		var getBoneNumber; // определяем номер элемента, на который нажали
+		var getBoneWidth; // определяем ширину костяшки - на такое расстояние и переместим нашу костяшку
 		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
 		if(((x-1 == nullX || x+1 == nullX) && y == nullY) || ((y-1 == nullY || y+1 == nullY) && x == nullX)) {
 
+			getBoneWidth = parseInt( $('#fff').css('width'),10)/4; // ширина костяшки - работает!
+			// сейчас мы определим элемент, на который нажали и его порядковый номер
+			if( y == 0 && x == 0) {
+				getTargetBone = $("#b-00");
+				getBoneNumber = 0;
+				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
+				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
+				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
+				console.log("getTargetBoneTop= ", getTargetBoneTop);
+
+				if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.animate({left: getTargetBoneLeft + getBoneWidth+"px"});// анимация
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.animate({top: getTargetBoneTop + getBoneWidth+"px"});// анимация
+				}
+			}
+
+			if( y == 0 && x == 1) {
+				getTargetBone = $("#b-01");
+				getBoneNumber = 1;
+				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
+				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
+				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
+				console.log("getTargetBoneTop= ", getTargetBoneTop);
+
+			}
+
+			if( y == 0 && x == 2) {
+				getTargetBone = $("#b-02");
+				getBoneNumber = 2;
+			}
+
+			if( y == 0 && x == 3) {
+				getTargetBone = $("#b-03");
+				getBoneNumber = 3;
+			}
+
+			if( y == 1 && x == 0) {
+				getTargetBone = $("#b-04");
+				getBoneNumber = 4;
+			}
+
+			if( y == 1 && x == 1) {
+				getTargetBone = $("#b-05");
+				getBoneNumber = 5;
+			}
+
+			if( y == 1 && x == 2) {
+				getTargetBone = $("#b-06");
+				getBoneNumber = 6;
+			}
+
+			if( y == 1 && x == 3) {
+				getTargetBone = $("#b-07");
+				getBoneNumber = 7;
+			}
+
+			if( y == 2 && x == 0) {
+				getTargetBone = $("#b-08");
+				getBoneNumber = 8;
+			}
+
+			if( y == 2 && x == 1) {
+				getTargetBone = $("#b-09");
+				getBoneNumber = 9;
+			}
+
+			if( y == 2 && x == 2) {
+				getTargetBone = $("#b-10");
+				getBoneNumber = 10;
+			}
+
+			if( y == 2 && x == 3) {
+				getTargetBone = $("#b-11");
+				getBoneNumber = 11;
+			}
+
+			if( y == 3 && x == 0) {
+				getTargetBone = $("#b-12");
+				getBoneNumber = 12;
+			}
+
+			if( y == 3 && x == 1) {
+				getTargetBone = $("#b-13");
+				getBoneNumber = 13;
+			}
+
+			if( y == 3 && x == 2) {
+				getTargetBone = $("#b-14");
+				getBoneNumber = 14;
+			}
+
+			if( y == 3 && x == 3) {
+				getTargetBone = $("#b-15");
+				getBoneNumber = 15;
+			}
+
+			console.log("getTargetBone= ", getTargetBone);
+			console.log("getBoneNumber= ", getBoneNumber);
+			console.log("getBoneWidth= ", getBoneWidth);
 
 			arr[nullY][nullX] = arr[y][x];
 			arr[y][x] = 0;
