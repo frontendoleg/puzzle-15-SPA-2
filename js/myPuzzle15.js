@@ -132,6 +132,18 @@ function Game15(){
 	var clicks = 0;
 	var placeShowResult = document.getElementById('placeShowResult');
 
+	// кроссбраузерная функция requestAnimationFrame();
+	var nextGameStep = (function(){
+		return requestAnimationFrame ||
+		webkitRequestAnimationFrame  ||
+		mozRequestAnimationFrame     ||
+		oRequestAnimationFrame       ||
+		msRequestAnimationFrame      ||
+		function(callback){
+			setTimeout(callback, 1000 / 60);
+		};
+	})();
+
 	// метод, рисующий наши пятнашки на экране
 	this.draw = function(boneSize) {
 		// console.log('arr',arr);
