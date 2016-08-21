@@ -467,6 +467,28 @@ function Game15(){
 		var getBoneNumber; // определяем номер элемента, на который нажали
 		var getBoneWidth; // определяем ширину костяшки - на такое расстояние и переместим нашу костяшку
 		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
+		function moveSlowly(){
+			if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.animate({left: getTargetBoneLeft + getBoneWidth+"px"});// анимация
+				}
+
+				if(y == nullY && x > nullX) {
+					// налево
+					getTargetBone.animate({left: getTargetBoneLeft - getBoneWidth+"px"});// анимация
+				}
+
+				if(y > nullY && x == nullX) {
+					// вверх
+					getTargetBone.animate({top: getTargetBoneTop - getBoneWidth+"px"});// анимация
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.animate({top: getTargetBoneTop + getBoneWidth+"px"});// анимация
+				}
+		}
+
 		if(((x-1 == nullX || x+1 == nullX) && y == nullY) || ((y-1 == nullY || y+1 == nullY) && x == nullX)) {
 
 			getBoneWidth = parseInt( $('#fff').css('width'),10)/4; // ширина костяшки - работает!
@@ -478,15 +500,16 @@ function Game15(){
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
-
+				moveSlowly();
+				getTargetBone.removeAttr("id");
 				if(y == nullY && x < nullX) {
-					// направо
-					getTargetBone.animate({left: getTargetBoneLeft + getBoneWidth+"px"});// анимация
+					// направо - меняем класс
+					getTargetBone.attr("id","b-01");
 				}
 
 				if(y < nullY && x == nullX) {
-					// вниз
-					getTargetBone.animate({top: getTargetBoneTop + getBoneWidth+"px"});// анимация
+					// вниз - меняем класс
+					getTargetBone.attr("id","b-04");
 				}
 			}
 
@@ -497,17 +520,66 @@ function Game15(){
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
+				moveSlowly();
+				getTargetBone.removeAttr("id");
+				if(y == nullY && x < nullX) {
+					// направо - меняем класс
+					getTargetBone.attr("id","b-02");
+				}
 
+				if(y == nullY && x < nullX) {
+					// налево - меняем класс
+					getTargetBone.attr("id","b-00");
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз - меняем класс
+					getTargetBone.attr("id","b-05");
+				}
 			}
 
 			if( y == 0 && x == 2) {
 				getTargetBone = $("#b-02");
 				getBoneNumber = 2;
+				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
+				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
+				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
+				console.log("getTargetBoneTop= ", getTargetBoneTop);
+				moveSlowly();
+				getTargetBone.removeAttr("id");
+				if(y == nullY && x < nullX) {
+					// направо - меняем класс
+					getTargetBone.attr("id","b-03");
+				}
+
+				if(y == nullY && x < nullX) {
+					// налево - меняем класс
+					getTargetBone.attr("id","b-01");
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз - меняем класс
+					getTargetBone.attr("id","b-06");
+				}
 			}
 
 			if( y == 0 && x == 3) {
 				getTargetBone = $("#b-03");
 				getBoneNumber = 3;
+				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
+				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
+				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
+				console.log("getTargetBoneTop= ", getTargetBoneTop);
+				moveSlowly();
+				if(y == nullY && x < nullX) {
+					// налево - меняем класс
+					getTargetBone.attr("id","b-02");
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз - меняем класс
+					getTargetBone.attr("id","b-07");
+				}
 			}
 
 			if( y == 1 && x == 0) {
