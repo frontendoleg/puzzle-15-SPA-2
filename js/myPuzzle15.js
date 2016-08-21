@@ -501,16 +501,7 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				getTargetBone.removeAttr("id");
-				if(y == nullY && x < nullX) {
-					// направо - меняем класс
-					getTargetBone.attr("id","b-01");
-				}
-
-				if(y < nullY && x == nullX) {
-					// вниз - меняем класс
-					getTargetBone.attr("id","b-04");
-				}
+				//field.draw();
 			}
 
 			if( y == 0 && x == 1) {
@@ -521,21 +512,7 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				getTargetBone.removeAttr("id");
-				if(y == nullY && x < nullX) {
-					// направо - меняем класс
-					getTargetBone.attr("id","b-02");
-				}
-
-				if(y == nullY && x < nullX) {
-					// налево - меняем класс
-					getTargetBone.attr("id","b-00");
-				}
-
-				if(y < nullY && x == nullX) {
-					// вниз - меняем класс
-					getTargetBone.attr("id","b-05");
-				}
+				//field.draw();
 			}
 
 			if( y == 0 && x == 2) {
@@ -546,21 +523,7 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				getTargetBone.removeAttr("id");
-				if(y == nullY && x < nullX) {
-					// направо - меняем класс
-					getTargetBone.attr("id","b-03");
-				}
-
-				if(y == nullY && x < nullX) {
-					// налево - меняем класс
-					getTargetBone.attr("id","b-01");
-				}
-
-				if(y < nullY && x == nullX) {
-					// вниз - меняем класс
-					getTargetBone.attr("id","b-06");
-				}
+				//field.draw();
 			}
 
 			if( y == 0 && x == 3) {
@@ -571,15 +534,7 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				if(y == nullY && x < nullX) {
-					// налево - меняем класс
-					getTargetBone.attr("id","b-02");
-				}
-
-				if(y < nullY && x == nullX) {
-					// вниз - меняем класс
-					getTargetBone.attr("id","b-07");
-				}
+				//field.draw();
 			}
 
 			if( y == 1 && x == 0) {
