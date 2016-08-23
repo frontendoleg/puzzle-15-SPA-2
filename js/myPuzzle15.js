@@ -73,7 +73,7 @@ function init() {
 			// костяшку сдвинуть можно
 			//alert('xBone = '+xBone + ' yBone = '+yBone);
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
-			field.draw(boneSize);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			// field.draw(boneSize);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			//console.log("field.victory().clicks= ",field.victory().clicks);
 			if(field.victory().res){
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
