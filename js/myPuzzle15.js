@@ -494,18 +494,30 @@ function Game15(){
 			getBoneWidth = parseInt( $('#fff').css('width'),10)/4; // ширина костяшки - работает!
 			// сейчас мы определим элемент, на который нажали и его порядковый номер
 			if( y == 0 && x == 0) {
-				getTargetBone = $("#b-00");
+				getTargetBone = $(".b-00");
+				console.log("We press 00");
+				console.log("getTargetBone = ", getTargetBone);
 				getBoneNumber = 0;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
+
 				//field.draw();
+				if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.removeClass("b-00").addClass("b-01");
+				}
+
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.removeClass("b-00").addClass("b-04");
+				}
 			}
 
 			if( y == 0 && x == 1) {
-				getTargetBone = $("#b-01");
+				getTargetBone = $(".b-01");
 				getBoneNumber = 1;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
@@ -513,10 +525,22 @@ function Game15(){
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				//field.draw();
+				if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.removeClass("b-01").addClass("b-02");
+				}
+				if(y == nullY && x > nullX) {
+					// налево
+					getTargetBone.removeClass("b-01").addClass("b-00");
+				}
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.removeClass("b-01").addClass("b-05");
+				}
 			}
 
 			if( y == 0 && x == 2) {
-				getTargetBone = $("#b-02");
+				getTargetBone = $(".b-02");
 				getBoneNumber = 2;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
@@ -524,10 +548,22 @@ function Game15(){
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				//field.draw();
+				if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.removeClass("b-02").addClass("b-03");
+				}
+				if(y == nullY && x > nullX) {
+					// налево
+					getTargetBone.removeClass("b-02").addClass("b-01");
+				}
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.removeClass("b-02").addClass("b-06");
+				}
 			}
 
 			if( y == 0 && x == 3) {
-				getTargetBone = $("#b-03");
+				getTargetBone = $(".b-03");
 				getBoneNumber = 3;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
@@ -535,6 +571,18 @@ function Game15(){
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				//field.draw();
+				if(y == nullY && x < nullX) {
+					// направо
+					getTargetBone.removeClass("b-03").addClass("b-04");
+				}
+				if(y == nullY && x > nullX) {
+					// налево
+					getTargetBone.removeClass("b-03").addClass("b-02");
+				}
+				if(y < nullY && x == nullX) {
+					// вниз
+					getTargetBone.removeClass("b-03").addClass("b-07");
+				}
 			}
 
 			if( y == 1 && x == 0) {
