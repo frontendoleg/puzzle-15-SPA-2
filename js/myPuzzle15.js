@@ -24,6 +24,7 @@ function init() {
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
+		console.log("mouse");
 		if(field.victory().res){
 			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 		}
@@ -37,6 +38,7 @@ function init() {
 		if((xBone >= 0 && xBone < 4) && (yBone >= 0 && yBone < 4)){
 			// костяшку сдвинуть можно
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
+			console.log("key");
 			if(field.victory().res){
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 			}
@@ -77,7 +79,6 @@ function init() {
 	$(function(){ // обработчик нажатия клавиши New Game
 		var newGameButton = $('#newGameButton');
 		newGameButton.click(function(){
-			console.log ("You pressed NewGame");
 			field.mix(100);
 			placeShowResult.innerHTML = 'Your steps - ' + field.showClicks(); // обновляем отображение счетчика
 		});
@@ -393,14 +394,9 @@ function Game15(){
 			// сейчас мы определим элемент, на который нажали и его порядковый номер
 			if( y == 0 && x == 0) {
 				getTargetBone = $(".b-00");
-				console.log("!!!getTargetBone = ", getTargetBone)
-				console.log("We press 00");
-				console.log("getTargetBone = ", getTargetBone);
 				getBoneNumber = 0;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -418,8 +414,6 @@ function Game15(){
 				getBoneNumber = 1;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -440,8 +434,6 @@ function Game15(){
 				getBoneNumber = 2;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -462,8 +454,6 @@ function Game15(){
 				getBoneNumber = 3;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -484,8 +474,6 @@ function Game15(){
 				getBoneNumber = 4;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -510,8 +498,6 @@ function Game15(){
 				getBoneNumber = 5;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -536,8 +522,6 @@ function Game15(){
 				getBoneNumber = 6;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -562,8 +546,6 @@ function Game15(){
 				getBoneNumber = 7;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -588,8 +570,6 @@ function Game15(){
 				getBoneNumber = 8;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -614,8 +594,6 @@ function Game15(){
 				getBoneNumber = 9;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -640,8 +618,6 @@ function Game15(){
 				getBoneNumber = 10;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -666,8 +642,6 @@ function Game15(){
 				getBoneNumber = 11;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -692,8 +666,6 @@ function Game15(){
 				getBoneNumber = 12;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -714,8 +686,6 @@ function Game15(){
 				getBoneNumber = 13;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -736,8 +706,6 @@ function Game15(){
 				getBoneNumber = 14;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -758,8 +726,6 @@ function Game15(){
 				getBoneNumber = 15;
 				getTargetBoneLeft = parseInt(getTargetBone.css('left'),10);
 				getTargetBoneTop = parseInt(getTargetBone.css('top'),10);
-				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
-				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
 				if(y == nullY && x < nullX) {
 					// направо
@@ -809,7 +775,6 @@ function Game15(){
 
 	// метод перемешивает пятнашки
 	this.mix = function(stepCount) {
-		console.log('mix starts', stepCount);
 		var x,y;
 		for (var i = 0; i < stepCount; i++) {
 			var nullX = getNull().x;
@@ -826,7 +791,6 @@ function Game15(){
 			}
 		}
 		clicks = 0;
-		console.log('why clicks is not zero', clicks);
 	}; //  --> end of this.mix method
 
 	// метод возвращает текущее значение clicks из объекта пятнашек field
