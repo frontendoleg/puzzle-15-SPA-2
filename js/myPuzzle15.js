@@ -9,52 +9,21 @@ function getNull(){	//функция возвращает координату �
 	}
 }
 
-// возвращает размер клиентской области окна
-function GetWindowClientSize() {
-		var uaB=navigator.userAgent.toLowerCase();
-		var isOperaB = (uaB.indexOf('opera')  > -1);
-		var isIEB=(!isOperaB && uaB.indexOf('msie') > -1);
-
-		var ClientWidth=((document.compatMode||isIEB)&&!isOperaB)?
-		(document.compatMode=='CSS1Compat')?
-		document.documentElement.clientWidth:
-		document.body.clientWidth:
-		(document.parentWindow||document.defaultView).innerWidth;
-
-		var ClientHeight=((document.compatMode||isIEB)&&!isOperaB)?
-		(document.compatMode=='CSS1Compat')?
-		document.documentElement.clientHeight:
-		document.body.clientHeight:
-		(document.parentWindow||document.defaultView).innerHeight;
-
-	return {width:ClientWidth, height:ClientHeight};
-}
 
 function init() {
 	console.time("draw");
 	var fieldSize = 40; // vmin - размер игрового поля ///////////////////////////////  было 80
 	var boneSize = 10;  // размер костяшки vmin /////////////////////////////////////   было 20
 
-	////определяем ширину и высоту клиентской области окна
-	var ClientWidth = GetWindowClientSize().width;
-	var ClientHeight = GetWindowClientSize().height;
-	console.log('clientWidth = ', ClientWidth);
-	console.log('clientHeight = ', ClientHeight);
-
 	makeGameField(fieldSize); // создаем игровое поле///////////////////////////////////////////////
 
 	var field = new Game15(); 	// создаем объект пятнашек
 
 	field.draw(boneSize); // ------- рисуем наши пятнашки на экране --------------
-	// console.log ('point48');
-	console.timeEnd("draw"); // рисуем наши пятнашки
-
 	field.mix(100); // перемешиваем
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
-		//field.draw(boneSize);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		//console.log("field.victory().clicks= ",field.victory().clicks);
 		if(field.victory().res){
 			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 		}
@@ -63,18 +32,11 @@ function init() {
 	function eventKey(x,y){ // функция действия при нажатии клавиш
 		// нужно переместить подходящую костяшку, если это возможно
 		var xNull = getNull().x;
-		// console.log ('xNull = ',xNull);
 		var yNull = getNull().y;
-		// console.log ('yNull = ',yNull);
 		var xBone = x+xNull, yBone = y+yNull; // координаты клетки кандидата
-		// console.log('xBone = ', xBone);
-		// console.log('yBone = ', yBone);
 		if((xBone >= 0 && xBone < 4) && (yBone >= 0 && yBone < 4)){
 			// костяшку сдвинуть можно
-			//alert('xBone = '+xBone + ' yBone = '+yBone);
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
-			// field.draw(boneSize);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			//console.log("field.victory().clicks= ",field.victory().clicks);
 			if(field.victory().res){
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 			}
@@ -131,71 +93,46 @@ function Game15(){
 
 	var clicks = 0;
 	var placeShowResult = document.getElementById('placeShowResult');
-
-	// кроссбраузерная функция requestAnimationFrame();
-	var nextGameStep = (function(){
-		return requestAnimationFrame ||
-		webkitRequestAnimationFrame  ||
-		mozRequestAnimationFrame     ||
-		oRequestAnimationFrame       ||
-		msRequestAnimationFrame      ||
-		function(callback){
-			setTimeout(callback, 1000 / 60);
-		};
-	})();
-
-
-
 	// метод, рисующий наши пятнашки на экране
 	this.draw = function(boneSize) {
 		// console.log('arr',arr);
 				$("#fff").empty(); // очищаем игровое поле перед началом отрисовки
 				if (arr[0][0] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-00")// стили костяшки
-						// .attr("id","b-00")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][0])	// пишем цифры
 							.addClass("bone-text"); // размер шрифта 1/3 определяем в медиазапросах
-
 				}
 
 				else{
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-00") // стили костяшки
-						// .attr("id","b-00")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[0][1] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-01")// стили костяшки
-						// .attr("id","b-01")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][1])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
-
 				}
 
 				else{
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-01") // стили костяшки
-						// .attr("id","b-01")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[0][2] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-02")// стили костяшки
-						// .attr("id","b-02")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][2])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -205,16 +142,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-02") // стили костяшки
-						// .attr("id","b-02")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[0][3] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-03")// стили костяшки
-						// .attr("id","b-03")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[0][3])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -224,16 +158,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-03") // стили костяшки
-						// .attr("id","b-03")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[1][0] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-04")// стили костяшки
-						// .attr("id","b-04")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[1][0])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -243,7 +174,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-04") // стили костяшки
-						// .attr("id","b-04")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
@@ -252,7 +182,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-05")// стили костяшки
-						// .attr("id","b-05")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[1][1])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -262,16 +191,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-05") // стили костяшки
-						// .attr("id","b-05")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[1][2] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-06")// стили костяшки
-						// .attr("id","b-06")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[1][2])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -281,16 +207,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-06") // стили костяшки
-						// .attr("id","b-06")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[1][3] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-07")// стили костяшки
-						// .attr("id","b-07")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[1][3])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -300,16 +223,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-07") // стили костяшки
-						// .attr("id","b-07")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[2][0] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-08")// стили костяшки
-						// .attr("id","b-08")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[2][0])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -319,16 +239,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-08") // стили костяшки
-						// .attr("id","b-08")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[2][1] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-09")// стили костяшки
-						// .attr("id","b-09")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[2][1])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -338,16 +255,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-09") // стили костяшки
-						// .attr("id","b-09")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[2][2] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-10")// стили костяшки
-						// .attr("id","b-10")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[2][2])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -357,16 +271,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-10") // стили костяшки
-						// .attr("id","b-10")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[2][3] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-11")// стили костяшки
-						// .attr("id","b-11")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[2][3])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -376,7 +287,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-11") // стили костяшки
-						// .attr("id","b-11")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
@@ -385,7 +295,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-12")// стили костяшки
-						// .attr("id","b-12")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[3][0])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -395,7 +304,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-12") // стили костяшки
-						// .attr("id","b-12")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
@@ -404,7 +312,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-13")// стили костяшки
-						// .attr("id","b-13")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[3][1])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -414,7 +321,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-13") // стили костяшки
-						// .attr("id","b-13")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
@@ -423,7 +329,6 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-14")// стили костяшки
-						// .attr("id","b-14")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[3][2])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -433,16 +338,13 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-14") // стили костяшки
-						// .attr("id","b-14")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
 
 				if (arr[3][3] > 0) {
-					// console.log('!!! Bones!!!')
 					$("<div></div>")// создаем костяшки
 						.addClass("bones")
 						.addClass("b-15")// стили костяшки
-						// .attr("id","b-15")// добавляем id вместо класса
 							.appendTo('.wrapper')
 							.append($('<p></p>')).text(arr[3][3])	// пишем цифры
 							.addClass("bone-text");	// размер шрифта 1/3 определяем в медиазапросах
@@ -452,11 +354,8 @@ function Game15(){
 					$("<div></div>")// создаем костяшки
 						.addClass("bones-white") // стили белой костяшки
 						.addClass("b-15") // стили костяшки
-						// .attr("id","b-15")// добавляем id вместо класса
 						.appendTo('.wrapper') 	// цифру на ней не пишем -  маленький костыль
 				}
-
-
 	}; // --> end of this.draw method
 
 	// метод перемещает "пятнашку" в пустую клетку
@@ -466,7 +365,6 @@ function Game15(){
 		var getTargetBone; // определяем DOM - элемент, на который нажали
 		var getBoneNumber; // определяем номер элемента, на который нажали
 		var getBoneWidth; // определяем ширину костяшки - на такое расстояние и переместим нашу костяшку
-		/*console.log ('x=',x,'y=',y,'nullx=',nullX,'nully=',nullY);*/
 		function moveSlowly(){
 			if(y == nullY && x < nullX) {
 					// направо
@@ -504,8 +402,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-00").addClass("b-01");
@@ -525,7 +421,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-01").addClass("b-02");
@@ -548,7 +443,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-02").addClass("b-03");
@@ -571,7 +465,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-03").addClass("b-04");
@@ -594,7 +487,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-04").addClass("b-05");
@@ -621,7 +513,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-05").addClass("b-06");
@@ -648,7 +539,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-06").addClass("b-07");
@@ -675,7 +565,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-07").addClass("b-07");
@@ -702,7 +591,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-08").addClass("b-09");
@@ -729,7 +617,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-09").addClass("b-10");
@@ -756,7 +643,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-10").addClass("b-11");
@@ -783,7 +669,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-11").addClass("b-11");
@@ -810,7 +695,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-12").addClass("b-13");
@@ -833,7 +717,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-13").addClass("b-14");
@@ -856,7 +739,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-14").addClass("b-15");
@@ -879,7 +761,6 @@ function Game15(){
 				console.log("getTargetBoneLeft= ", getTargetBoneLeft);
 				console.log("getTargetBoneTop= ", getTargetBoneTop);
 				moveSlowly();
-				//field.draw();
 				if(y == nullY && x < nullX) {
 					// направо
 					getTargetBone.removeClass("b-15").addClass("b-15");
@@ -893,10 +774,6 @@ function Game15(){
 					getTargetBone.removeClass("b-15").addClass("b-11");
 				}
 			}
-
-			console.log("getTargetBone= ", getTargetBone);
-			console.log("getBoneNumber= ", getBoneNumber);
-			console.log("getBoneWidth= ", getBoneWidth);
 
 			arr[nullY][nullX] = arr[y][x];
 			arr[y][x] = 0;
@@ -935,19 +812,15 @@ function Game15(){
 		console.log('mix starts', stepCount);
 		var x,y;
 		for (var i = 0; i < stepCount; i++) {
-			//console.log('i=',i);
 			var nullX = getNull().x;
 			var nullY = getNull().y;
-			//console.log('nullX=', nullX,' nullY=',nullY);
 			var hMove = getRandomBool();
 			var upLeft = getRandomBool();
-			//console.log('hMove=',hMove,' upLeft=',upLeft);
 			if (!hMove && !upLeft) { y = nullY; x = nullX - 1;}
 			if (hMove && !upLeft) { x = nullX; y = nullY + 1;}
 			if (!hMove && upLeft) { y = nullY; x = nullX + 1;}
 			if (hMove && upLeft) { x = nullX; y = nullY - 1;}
 			if (0 <= x && x <= 3 && 0 <= y && y <=3) {
-				//console.log('Coordinats for move x=',x,' y=',y);
 				this.move(x,y);
 				this.draw(10);
 			}
