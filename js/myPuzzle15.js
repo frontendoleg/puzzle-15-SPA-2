@@ -384,6 +384,8 @@ function Game15(){
 		}; // --> end of function victory
 
 		function showAlarm(){
+			arr[nullY][nullX] = arr[y][x];
+			arr[y][x] = 0;
 			if(victory().res){
 				alert("You win in "+victory().clicks+"  steps!"); // alert принимает только один аргумент
 			}
@@ -764,8 +766,7 @@ function Game15(){
 				}
 			}
 
-			arr[nullY][nullX] = arr[y][x];
-			arr[y][x] = 0;
+
 				if (ifPlusClicks){
 				clicks++; console.log('clicks=', clicks);
 				}
