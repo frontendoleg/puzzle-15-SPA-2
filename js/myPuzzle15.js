@@ -28,7 +28,7 @@ function init() {
 		if(field.victory().res){
 			setTimeout(function() {
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
-			}, 3000);
+			}, 500);
 		}
 	}
 
@@ -43,8 +43,10 @@ function init() {
 			console.log("key");
 		}
 			if(field.victory().res){
+			setTimeout(function() {
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
-			}
+			}, 500);
+		}
 
 
 	}
