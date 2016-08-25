@@ -25,9 +25,9 @@ function init() {
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
 		console.log("mouse");
-		if(field.victory().res){
-			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
-		}
+		//if(field.victory().res){
+		//	alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+		//}
 	}
 
 	function eventKey(x,y){ // функция действия при нажатии клавиш
@@ -40,9 +40,9 @@ function init() {
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
 			console.log("key");
 		}
-			if(field.victory().res){
-				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
-			}
+			//if(field.victory().res){
+			//	alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+			//}
 
 
 	}
@@ -367,25 +367,47 @@ function Game15(){
 		var getTargetBone; // определяем DOM - элемент, на который нажали
 		var getBoneNumber; // определяем номер элемента, на который нажали
 		var getBoneWidth; // определяем ширину костяшки - на такое расстояние и переместим нашу костяшку
+
+		// проверка условия победы
+		function victory() {
+			console.log("Start victory asking");
+			var e = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
+			var res = true;
+			for (var i = 0; i < 4; i++) {
+				for (var j = 0; j < 4; j++) {
+					if (e[i][j] != arr[i][j]) {
+						res = false;
+					}
+				}
+			}
+			return {"res":res, "clicks":clicks}; // clicks была доступна внутри Game() - возвращаем ее, делаем доступной
+		}; // --> end of function victory
+
+		function showAlarm(){
+			if(victory().res){
+				alert("You win in "+victory().clicks+"  steps!"); // alert принимает только один аргумент
+			}
+		}
+
 		function moveSlowly(){
 			if(y == nullY && x < nullX) {
 					// направо
-					getTargetBone.animate({left: getTargetBoneLeft + getBoneWidth+"px"});// анимация
+					getTargetBone.animate({left: getTargetBoneLeft + getBoneWidth+"px"}, showAlarm());// анимация
 				}
 
 				if(y == nullY && x > nullX) {
 					// налево
-					getTargetBone.animate({left: getTargetBoneLeft - getBoneWidth+"px"});// анимация
+					getTargetBone.animate({left: getTargetBoneLeft - getBoneWidth+"px"}, showAlarm());// анимация
 				}
 
 				if(y > nullY && x == nullX) {
 					// вверх
-					getTargetBone.animate({top: getTargetBoneTop - getBoneWidth+"px"});// анимация
+					getTargetBone.animate({top: getTargetBoneTop - getBoneWidth+"px"}, showAlarm());// анимация
 				}
 
 				if(y < nullY && x == nullX) {
 					// вниз
-					getTargetBone.animate({top: getTargetBoneTop + getBoneWidth+"px"});// анимация
+					getTargetBone.animate({top: getTargetBoneTop + getBoneWidth+"px"}, showAlarm());// анимация
 				}
 		}
 
@@ -754,20 +776,6 @@ function Game15(){
 	console.log("We moved the bone");
 	}; 	//  --> end of this.move method
 
-	// проверка условия победы
-	this.victory = function() {
-		console.log("Start victory asking");
-		var e = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
-		var res = true;
-		for (var i = 0; i < 4; i++) {
-			for (var j = 0; j < 4; j++) {
-				if (e[i][j] != arr[i][j]) {
-					res = false;
-				}
-			}
-		}
-		return {"res":res, "clicks":clicks}; // clicks была доступна внутри Game() - возвращаем ее, делаем доступной
-	}; // --> end of this.victory method
 
 	// функция возвращает произвольное логическое значение
 	function getRandomBool() {
