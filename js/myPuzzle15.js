@@ -26,7 +26,9 @@ function init() {
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
 		console.log("mouse");
 		if(field.victory().res){
-			alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+			$(function(){
+				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
+			})
 		}
 	}
 
@@ -41,6 +43,8 @@ function init() {
 			console.log("key");
 		}
 			if(field.victory().res){
+
+
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 			}
 
