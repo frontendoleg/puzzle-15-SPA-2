@@ -39,11 +39,12 @@ function init() {
 			// костяшку сдвинуть можно
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
 			console.log("key");
+		}
 			if(field.victory().res){
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
 			}
 
-		}
+
 	}
 
 	$(function(){ // обработчик кликов мыши
@@ -750,10 +751,12 @@ function Game15(){
 				// -----------------  вывод сообщения о ходах на экран --------------------
 
 		}
+	console.log("We moved the bone");
 	}; 	//  --> end of this.move method
 
 	// проверка условия победы
 	this.victory = function() {
+		console.log("Start victory asking");
 		var e = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
 		var res = true;
 		for (var i = 0; i < 4; i++) {
