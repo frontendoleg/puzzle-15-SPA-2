@@ -24,7 +24,6 @@ function init() {
 
 	function eventMouse(x,y){ // функция действия при кликах мыши
 		field.move(x,y,true); // третий аргумент - нужно увеличивать счетчик ходов
-		console.log("mouse");
 		if(field.victory().res){
 			setTimeout(function() {
 				alert("You win in "+field.victory().clicks+"  steps!"); // alert принимает только один аргумент
@@ -40,7 +39,6 @@ function init() {
 		if((xBone >= 0 && xBone < 4) && (yBone >= 0 && yBone < 4)){
 			// костяшку сдвинуть можно
 			field.move(xBone,yBone, true); // третий аргумент - нужно увеличивать счетчик ходов
-			console.log("key");
 		}
 			if(field.victory().res){
 			setTimeout(function() {
@@ -749,18 +747,16 @@ function Game15(){
 			arr[nullY][nullX] = arr[y][x];
 			arr[y][x] = 0;
 				if (ifPlusClicks){
-				clicks++; console.log('clicks=', clicks);
+				clicks++;
 				}
 				placeShowResult.innerHTML = 'Your steps - ' + clicks;
 				// -----------------  вывод сообщения о ходах на экран --------------------
 
 		}
-	console.log("We moved the bone");
 	}; 	//  --> end of this.move method
 
 	// проверка условия победы
 	this.victory = function() {
-		console.log("Start victory asking");
 		var e = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,0]];
 		var res = true;
 		for (var i = 0; i < 4; i++) {
